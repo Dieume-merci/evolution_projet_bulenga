@@ -1,0 +1,207 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.bi {
+  vertical-align: 0em !important;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+.lead{
+  font-size: 12px !important;
+  display: block;
+  padding-bottom: 15px;
+}
+.lead h3{
+  font-size: 18px;
+  color: #012970;
+  display: inline;
+}
+.lead a, .lead .btn-add {
+  float: right;
+}
+.btn-action{
+  padding: 5px 20px !important;
+  font-size: 10px !important;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap !important;
+  border-radius: .25rem;
+}
+
+/* card stat */
+
+.stat-cards {
+    padding-left: 23px;
+    margin-bottom: 20px;
+}
+
+.stat-cards>div {
+    padding: 0px 0px;
+}
+.stat-cards>div:nth-child(2) {
+    margin: 0px 5px;
+    padding: 0px 10px;
+}
+.stat-cards>div:nth-child(3) {
+    margin-right: -20px;
+}
+
+.stat-cards-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 12px 10px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.1);
+    box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.1);
+    border-radius: 5px;
+    height: 100%;
+}
+
+.stat-cards-info {
+    padding-top: 10px;
+}
+
+.stat-cards-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 9px;
+    font-size: 30px;
+}
+
+.stat-cards-icon.primary {
+    background-color: rgba(47, 73, 209, 0.1);
+    color: #2f49d1;
+}
+
+.stat-cards-icon.warning {
+    background-color: rgba(255, 182, 72, 0.1);
+    color: #ffb648;
+}
+
+.stat-cards-icon.purple {
+    background-color: rgba(95, 46, 234, 0.1);
+    color: #5f2eea;
+}
+
+.stat-cards-icon.success {
+    background-color: rgba(75, 222, 151, 0.1);
+    color: #4bde97;
+}
+
+.stat-cards-info__num {
+    line-height: 1.22;
+    margin-bottom: 4px;
+    font-size: 24px;
+    color: #012970;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.stat-cards-info__title {
+    line-height: 1.22;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #012970;
+}
+
+.stat-cards-info__progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 10px;
+    line-height: 1.22;
+    color: #b9b9b9;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-cards-info__profit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.22;
+    margin-right: 10px;
+}
+
+.stat-cards-info__profit.success {
+    color: #4bde97;
+}
+
+.stat-cards-info__profit.primary {
+    color: #4b97de;
+}
+
+.stat-cards-info__profit.danger {
+    color: #f26464;
+}
+
+.stat-cards-info__profit.warning {
+    color: #ffb648;
+}
+
+.stat-cards-info__profit svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
