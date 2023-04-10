@@ -4,68 +4,18 @@
 <div class="row card">
     <div class="card-body p-4 rounded">
         <div class="logo-title">
-            <h3><i class="bi bi-people"></i> Ajouter Un items</h3>
+            <h3><i class="bi bi-people"></i> Ajouter un type d'accouchement </h3>
         </div>
         <div class="row mt-5">
-            <form action="" class="form-group">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form-floating">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 1</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 2</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 3</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 4</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 5</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 6</label>
-                        </div>
+            <form action="">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="text" name="" required class="form-control input-group-addon" placeholder="Entrer une information">
+                        <label for="">Designation</label>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="form-floating">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 7</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 8</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 9</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 10</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 11</label>
-                        </div>
-                        <div class="form-floating mt-2">
-                            <input type="text" name="" class="form-control" placeholder="Entrer une information">
-                            <label for="">champ 12</label>
-                        </div>
-                    </div>
-                    <div class="mt-3 logo-title">
-                        <button class="btn btn-success btn-lg">
-                            <span class="bi bi-send"> Enregistrer</span>
-                        </button>
-                    </div>
+                    <button class="btn btn-success btn-lg">
+                        <span class="bi bi-save"> Enregistrer</span>
+                    </button>
                 </div>
             </form>
         </div>
