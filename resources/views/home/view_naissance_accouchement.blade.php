@@ -8,14 +8,12 @@
         </div>
         <div class="row">
             <div class="col-lg-8">
-                Lorem ipsum dolor sit amet consectetur,
-                 adipisicing elit. Totam dignissimos, 
-                 placeat cumque magnam voluptate dicta corrupti unde reiciendis ipsum, 
-                 nemo neque a quo autem maiores. Nihil facere culpa distinctio odit.
+                <div class="text-center mt-2">
+                    <h3><i>Selectionner Un Element Dans le Menu </i></h3>
+                </div>
             </div>
             <div class="col-lg-4">
-                <i class="bi bi-menu-app"> Menu</i>
-                cxjcxjkcxjkcxjkcxjk
+                @include('components.sidebar.sous_menu_mere')
             </div>
         </div>
     </div>
