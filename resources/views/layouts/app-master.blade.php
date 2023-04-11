@@ -11,6 +11,7 @@
     <link href="{!! url('assets/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
     <link href="{!! url('assets/vendor/bootstrap-icons/bootstrap-icons.css') !!}" rel="stylesheet">
     <link href="{!! url('assets/css/style.css') !!}" rel="stylesheet">
+    <link href="{!! url('assets/bootstrap/css/mon_style_propre.css') !!}" rel="stylesheet">
     <link href="{!! url('assets/css/app.css') !!}" rel="stylesheet">
     <style>
       .bd-placeholder-img {

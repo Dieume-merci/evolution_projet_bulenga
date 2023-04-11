@@ -5,6 +5,7 @@
     <div class="card-body p-4 rounded">
         <div class="logo-title">
             <h3><i class="bi bi-people"></i> Ajouter Un items</h3>
+                    <button class="close" data-bs-dismiss="modal">X</button>
         </div>
         <div class="row mt-5">
             <form action="" class="form-group">
