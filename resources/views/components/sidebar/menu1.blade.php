@@ -18,8 +18,8 @@
         <i class="bi bi-signal"></i><span>Gestion Naissancce</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav4">
-        <li><a class="nav-link collapsed" href="{{ route('view_accouchement')}}">
-            <i class="bi bi-circle"></i><span>Accouchement</span></a></li>
+        <li><a class="nav-link collapsed" href="{{ route('view_mere')}}">
+            <i class="bi bi-circle"></i><span>les Patients</span></a></li>
     </ul>
     <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav5">
         <li><a class="nav-link collapsed" href="{{ route('view_deces')}}">
