@@ -14,4 +14,8 @@ class CpnController extends Controller
     {
         return view('Home.view_visite_cpn');
     }
+    public function viewcpnacouchement()
+    {
+        return view('Home.view_cpn_mere');
+    }
 }

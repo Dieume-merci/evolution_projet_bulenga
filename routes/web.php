@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('view_cpn', 'CpnController@viewcpn')->name("view_cpn");
     Route::get('view_cpon', 'CponController@viewcpon')->name("view_cpon");
     Route::get('view_ac/{id}', 'AccouchementController@viewacouchement')->name("view_acc");
+    Route::get('view_ac_cpn/{id}', 'CpnController@viewcpnacouchement')->name("view_acc_cpn");
     Route::get('view_patiente', 'MereController@viewmere')->name("view_mere");
     Route::get('view_deces', 'DecesController@viewdeces')->name("view_deces");
     Route::get('view_type_acouchement', 'TypeAccouchementController@viewtypeacouchement')->name("view_type_acouchement");

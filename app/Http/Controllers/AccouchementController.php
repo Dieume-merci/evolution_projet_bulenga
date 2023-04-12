@@ -12,6 +12,6 @@ class AccouchementController extends Controller
     }
     public function viewacouchement()
     {
-        return view('Home.view_naissance_accouchement');
+        return view('Home.view_accouchement');
     }
 }
