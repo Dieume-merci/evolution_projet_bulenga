@@ -18,8 +18,8 @@
                         <button href="#" id="acouchement" class="btn btn-link btn-sm dropdown-toggle" type="button" id="dorpper" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="bi bi-info-square"></span></button>
                             <ul class="dropdown-menu" aria-label="dorpper">
-                                <li><button href="button" class="btn btn-link dropdown-item">Ajouter</button></li>
-                                <li><button href="button" class="btn btn-link dropdown-item">Voir</button></li>
+                                <li><a href="{{ route("add_acc",1)}}" class="btn btn-link dropdown-item">Ajouter</a></li>
+                                <li><a href="{{ route("view_ac",2)}}" class="btn btn-link dropdown-item">Voir</a></li>
                             </ul>
                         </div>
                 </div>

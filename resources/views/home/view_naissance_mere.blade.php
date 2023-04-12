@@ -162,10 +162,100 @@
             <div class="modal-body text-center">
                 <form action="" class="form-group">
                     <div class="row">
-                        <div class="form-floating">
-                            <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
-                            <label for="">Lieu d'Acouchement</label>
+                        <div class="col-lg-6">
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
                         </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" name="" class="form-control" required value="Centre Bulenga/bloc3" placeholder="Entrer une information">
+                                <label for="">Lieu d'Acouchement</label>
+                            </div>
+                        </div>
+                        
                         <div class="form-floating mt-2">
                             <input type="datetime-local" name="" class="form-control" placeholder=" Entrer une information">
                             <label for="">Date d'Accouchement</label>

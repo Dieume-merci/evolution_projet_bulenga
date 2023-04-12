@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bebes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('attestationn_id')->constrained()->onDelete('cascade');
             $table->foreignId('visite_cpon_id')->constrained()->onDelete('cascade');
             $table->string('bebe_complicationsAlaNaiss',45)->nullable();
             $table->string('bebe_prc',45)->nullable();
@@ -20,7 +21,6 @@ return new class extends Migration
             $table->string('bebe_ctx',45)->nullable();
             $table->string('bebe_probleme_constate',45)->nullable();
             $table->string('bebe_soins_traitement',45)->nullable();
-            $table->string('bebe_enregistrement_etat_civil',45)->nullable();
         });
     }
 
