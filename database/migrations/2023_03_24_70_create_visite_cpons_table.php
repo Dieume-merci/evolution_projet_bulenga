@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('visite_cpons', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cpon_id')->constrained()->onDelete('cascade');
+            $table->foreignId('mere_id')->constrained()->onDelete('cascade');
+            $table->foreignId('bebe_id')->constrained()->onDelete('cascade');
         });
     }
 
