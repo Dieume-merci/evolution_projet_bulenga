@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('patient_id')->constrained()->onDelete('cascade');
             $table->dateTime("date_cpon");
-            $table->dateTime("date_cpon");
         });
     }
 

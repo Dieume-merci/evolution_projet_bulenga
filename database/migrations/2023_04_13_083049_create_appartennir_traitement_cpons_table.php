@@ -14,10 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('appartennir_traitement_cpons', function (Blueprint $table) {
-            $table->string("descrition");
             $table->foreignId("traitement_cpn_cpon_id")->constrained()->OnDelete("cascade");
             $table->foreignId('cpn_id')->constrained()->onDelete('cascade');
-            $table->string("descrition");
+            $table->string("traitement_cpn_cpon_descrition");
             $table->dateTime("date_traitement");
         });
     }
