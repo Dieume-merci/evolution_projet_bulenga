@@ -30,7 +30,7 @@
             <i class="bi bi-circle"></i><span>type Accouchement</span></a></li>
     </ul>
     <a class="nav-link collapsed" data-bs-target="#menu3" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-envelope-heart"></i><span>Gestion VIH</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-envelope-heart"></i><span>Planing Familiale</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="menu3" class="nav-content collapse" data-bs-parent="#sidebar-nav7">
         <li><a class="nav-link collapsed" href="{{ route('view_depistage')}}">

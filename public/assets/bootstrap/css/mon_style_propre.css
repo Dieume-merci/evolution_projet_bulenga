@@ -1,3 +1,31 @@
 .dn-center{
     text-align: right;
 }
+.dn-left{
+    text-align: right;
+}
+.dnp-georgia{
+    font-family: Georgia;
+}
+.dnh{
+    display: none;
+}
+.dn-justifier{
+    margin-top: 43px;
+}
+#bouttonright{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-bottom: 13px solid transparent;
+    border-left: 20px solid blue;
+    border-top: 13px solid transparent;
+    }
+#bouttonleft{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 13px solid transparent;
+    border-right: 20px solid red;
+    border-bottom: 13px solid transparent;
+    }
