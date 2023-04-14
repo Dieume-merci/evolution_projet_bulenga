@@ -10,16 +10,20 @@
         <li><a class="nav-link collapsed" href="{{ route('view_cpon')}}">
             <i class="bi bi-circle"></i><span>CPON</span></a></li>
     </ul>
-    <ul id="menu1" class="nav-content collapse" data-bs-parent="#sidebar-nav3">
-        <li><a class="nav-link collapsed" href="">
-            <i class="bi bi-circle"></i><span>CPS</span></a></li>
-    </ul>
     <a class="nav-link collapsed" data-bs-target="#menu2" data-bs-toggle="collapse" href="#">
         <i class="bi bi-signal"></i><span>Gestion Naissancce</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav4">
         <li><a class="nav-link collapsed" href="{{ route('view_mere')}}">
             <i class="bi bi-circle"></i><span>les Patients</span></a></li>
+    </ul>
+    <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav51">
+        <li><a class="nav-link collapsed" href="{{ route('view_deces')}}">
+            <i class="bi bi-circle"></i><span>Naissance vivantes</span></a></li>
+    </ul>
+    <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav50">
+        <li><a class="nav-link collapsed" href="{{ route('view_deces')}}">
+            <i class="bi bi-circle"></i><span>Mort Né</span></a></li>
     </ul>
     <ul id="menu2" class="nav-content collapse" data-bs-parent="#sidebar-nav5">
         <li><a class="nav-link collapsed" href="{{ route('view_deces')}}">
@@ -47,16 +51,8 @@
     <a class="nav-link collapsed" data-bs-target="#menu4" data-bs-toggle="collapse" href="#">
         <i class="bi bi-soundwave"></i><span>Gestion deddd</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
-    <ul id="menu4" class="nav-content collapse" data-bs-parent="#sidebar-nav10">
-        <li><a class="nav-link collapsed" href="{{ route('view_depistage')}}">
-            <i class="bi bi-circle"></i><span>Problemes Acouchement</span></a></li>
-    </ul>
     <ul id="menu4" class="nav-content collapse" data-bs-parent="#sidebar-nav11">
         <li><a class="nav-link collapsed" href="{{ route('view_methode')}}">
             <i class="bi bi-circle"></i><span>Risques CPN</span></a></li>
-    </ul>
-    <ul id="menu4" class="nav-content collapse" data-bs-parent="#sidebar-nav12">
-        <li><a class="nav-link collapsed" href="{{ route('view_sous_methode')}}">
-            <i class="bi bi-circle"></i><span>Complications Acouchement</span></a></li>
     </ul>
 </li>
