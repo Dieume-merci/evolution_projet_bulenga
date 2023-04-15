@@ -1,17 +1,17 @@
 @extends('layouts.app-master')
 
 @section('content')
-<div class="row card">
+<div class="row card dnp-georgia">
     <div class="card-body p-4 rounded">
         <div class="logo-title">
-            <i class="logo-title"><h3>Liste de deces</h3></i>
+            <i class="logo-title"><h3>Liste de Patients à la Maternité</h3></i>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-2">
             <div class="container">
                 <div class="dn-center">
                     {{-- <button class="btn btn-info" data-bs-toggle="modal" data-bs-keyboard="false" data-bs-target="#add_information"><span class="bi bi-plus"></span> Add</button> --}}
                 </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>N°</th>
@@ -35,7 +35,7 @@
                             <td>12 an(a)</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
+                            <td><button onclick="shorterror()" class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
                                 <button class="btn btn-warning btn-sm"><span class="bi bi-book"></span></button>
                                 <div class="dropup d-inline">
                                     <button href="#" class="btn btn-info btn-sm dropdown-toggle" type="button" id="dorpper" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,7 +59,7 @@
                             <td>12 an(a)</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
+                            <td><button onclick="shorterror()" class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
                                 <button class="btn btn-warning btn-sm"><span class="bi bi-book"></span></button>
                                 <div class="dropup d-inline">
                                     <button href="#" class="btn btn-info btn-sm dropdown-toggle" type="button" id="dorpper2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,7 +83,7 @@
                             <td>12 an(a)</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
+                            <td><button onclick="shorterror()" class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
                                 <button class="btn btn-warning btn-sm"><span class="bi bi-book"></span></button>
                                 <div class="dropup d-inline">
                                     <button href="#" class="btn btn-info btn-sm dropdown-toggle" type="button" id="dorpper3" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,7 +107,7 @@
                             <td>12 an(a)</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
+                            <td><button onclick="shorterror()" class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
                                 <button class="btn btn-warning btn-sm"><span class="bi bi-book"></span></button>
                                 <div class="dropup d-inline">
                                     <button href="#" class="btn btn-info btn-sm dropdown-toggle" type="button" id="dorpper4" data-bs-toggle="dropdown" aria-expanded="false">
@@ -130,7 +130,7 @@
                             <td>12 an(a)</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
+                            <td><button onclick="shorterror()" class="btn btn-danger btn-sm"><span class="bi bi-trash3"></span></button>
                                 <button class="btn btn-warning btn-sm"><span class="bi bi-book"></span></button>
                                 <div class="dropup d-inline">
                                     <button href="#" class="btn btn-info btn-sm dropdown-toggle" type="button" id="dorpper5" data-bs-toggle="dropdown" aria-expanded="false">

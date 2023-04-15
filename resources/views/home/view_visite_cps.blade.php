@@ -11,7 +11,7 @@
                 <div class="dn-center">
                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add_information"><span class="bi bi-plus"></span> Add</button>
                 </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>N°</th>

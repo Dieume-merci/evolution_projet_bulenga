@@ -11,7 +11,7 @@
                 <div class="dn-center">
                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add_information"><span class="bi bi-plus"></span> Add</button>
                 </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>N°</th>
@@ -27,7 +27,7 @@
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
                                 <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                                 <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
@@ -36,7 +36,7 @@
                             <td>Boss BossBossBossBossBoss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
                                 <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                                 <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
@@ -45,7 +45,7 @@
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
                                 <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                                 <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
@@ -54,7 +54,7 @@
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
                                 <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                                 <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>

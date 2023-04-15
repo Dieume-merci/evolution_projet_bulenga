@@ -11,3 +11,10 @@ function change_show_items(){
     document.getElementById("naissancevivante").style.display='none';
     document.getElementById(element_show).style.display='flex';
 }
+function shorterror(){
+    swal({
+        title: "Element supprimer Avec Success",
+        icon: "success",
+        button: "Fermer",
+        });
+}

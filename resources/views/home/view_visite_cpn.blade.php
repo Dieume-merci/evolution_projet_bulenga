@@ -4,14 +4,11 @@
 <div class="row card">
     <div class="card-body p-4 rounded">
         <div class="logo-title">
-            <i class="logo-title"><h3>Liste de deces</h3></i>
+            <i class="logo-title"><h3>Les Patients A la Consultation Pres Natale</h3></i>
         </div>
-        <div class="row mt-5">
+        <div class="row">
             <div class="container">
-                <div class="dn-center">
-                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add_information"><span class="bi bi-plus"></span> Add</button>
-                </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>N°</th>
@@ -27,45 +24,40 @@
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                                <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                                <a href="{{ route("expl_cpn",2)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Boss BossBossBossBossBoss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                                <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                                <a href="{{ route("expl_cpn",2)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                                <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                                <a href="{{ route("expl_cpn",2)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><a href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                                <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                                <a href="{{ route("expl_cpn",2)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
                         <tr>
                             <td>5</td>
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger"><span class="bi bi-trash3">ok</span></button>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                                <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td><a onclick="shorterror()" href="" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
+                            <a href="{{ route("expl_cpn",2)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>
                     </tbody>
                 </table>

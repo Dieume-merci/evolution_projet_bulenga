@@ -36,10 +36,6 @@
     <a class="nav-link collapsed" data-bs-target="#menu3" data-bs-toggle="collapse" href="#">
         <i class="bi bi-envelope-heart"></i><span>Planing Familiale</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
-    <ul id="menu3" class="nav-content collapse" data-bs-parent="#sidebar-nav7">
-        <li><a class="nav-link collapsed" href="{{ route('view_depistage')}}">
-            <i class="bi bi-circle"></i><span>Depistage</span></a></li>
-    </ul>
     <ul id="menu3" class="nav-content collapse" data-bs-parent="#sidebar-nav8">
         <li><a class="nav-link collapsed" href="{{ route('view_methode')}}">
             <i class="bi bi-circle"></i><span>Methode</span></a></li>
@@ -48,11 +44,19 @@
         <li><a class="nav-link collapsed" href="{{ route('view_sous_methode')}}">
             <i class="bi bi-circle"></i><span>Sous Methode</span></a></li>
     </ul>
+    <ul id="menu3" class="nav-content collapse" data-bs-parent="#sidebar-nav7">
+        <li><a class="nav-link collapsed" href="{{ route('view_plan')}}">
+            <i class="bi bi-circle"></i><span>Planing Familiale</span></a></li>
+    </ul>
     <a class="nav-link collapsed" data-bs-target="#menu4" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-soundwave"></i><span>Gestion deddd</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-soundwave"></i><span>Initialisation d'options</span><i class="bi bi-chevron-down ms-auto"></i>
     </a>
     <ul id="menu4" class="nav-content collapse" data-bs-parent="#sidebar-nav11">
         <li><a class="nav-link collapsed" href="{{ route('view_methode')}}">
             <i class="bi bi-circle"></i><span>Risques CPN</span></a></li>
+    </ul>
+    <ul id="menu4" class="nav-content collapse" data-bs-parent="#sidebar-nav11">
+        <li><a class="nav-link collapsed" href="{{ route('view_methode')}}">
+            <i class="bi bi-circle"></i><span>2ieme Option</span></a></li>
     </ul>
 </li>

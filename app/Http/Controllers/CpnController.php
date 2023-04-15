@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class CpnController extends Controller
 {
-    public function addcpn()
+    public function explorercpn()
     {
-        return view('Home.add_visite_cpn');
+        return view('Home.exploration_visite_cpn');
     }
     public function viewcpn()
     {

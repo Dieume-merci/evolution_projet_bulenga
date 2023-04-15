@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="text-center ">
-                    <table class="table table-condensed">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>N°</th>
@@ -21,19 +21,19 @@
                             <tr>
                                 <td>1</td>
                                 <td>21-12-1996 </td>
-                                <td><a href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
+                                <td><a onclick="shorterror()" href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
                                     <a href="" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td>21-12-1996 </td>
-                                <td><a href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
+                                <td><a onclick="shorterror()" href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
                                     <a href="" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td>21-12-1996 </td>
-                                <td><a href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
+                                <td><a onclick="shorterror()" href="" class="btn btn-danger"><span class="bi bi-trash"></span></a>
                                     <a href="" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                             </tr>
                         </tbody>

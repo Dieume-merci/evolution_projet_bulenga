@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('pfs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained()->onDelete('cascade');
+            $table->foreignId('methode_id')->constrained()->onDelete('cascade');
             $table->string('pf_obs',45)->nullable();
             $table->string('pf_infecondite',45)->nullable();
             $table->string('pf_ist',45)->nullable();
             $table->string('pf_statut_serologique_vih',45)->nullable();
+            $table->dateTie('pf_date')->nullable();
         });
     }
 
