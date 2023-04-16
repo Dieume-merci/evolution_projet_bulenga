@@ -29,8 +29,7 @@ return new class extends Migration
             $table->string('genre');
             $table->string('lieu_de_naissance');
             $table->string('date_de_naissance');
-            // $table->foreignId('patient_id')->constrained()->onDelete('cascade');
-            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

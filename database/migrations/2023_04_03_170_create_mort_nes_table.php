@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('accouchement_id')->constrained()->onDelete('cascade');
             $table->string('mort_ne_designation',45)->nullable();
+            $table->timestamps();
         });
     }
 

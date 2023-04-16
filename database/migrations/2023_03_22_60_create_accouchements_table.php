@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('maternite_id')->constrained()->onDelete('cascade');
             $table->foreignId('type_accouchement_id')->constrained()->onDelete('cascade');
             $table->dateTime('accouchement_date_enregistrement');
+            $table->timestamps();
             // $table->string('accouchement_lieu_accouchement',45)->nullable();
         });
     }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('accouchement_id')->constrained()->onDelete('cascade');
             $table->string('complication_designation',45)->nullable();
             $table->string('complication_complications_obstetricales',45)->nullable();
+            $table->timestamps();
         });
     }
 

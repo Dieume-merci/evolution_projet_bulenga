@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('methode_id')->constrained()->onDelete('cascade');
             $table->string('sous_methode_designation',45)->nullable();
+            $table->timestamps();
         });
     }
 

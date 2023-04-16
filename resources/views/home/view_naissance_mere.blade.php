@@ -3,8 +3,8 @@
 @section('content')
 <div class="row card dnp-georgia">
     <div class="card-body p-4 rounded">
-        <div class="logo-title">
-            <i class="logo-title"><h3>Liste de Patients à la Maternité</h3></i>
+        <div class="lead">
+            <h3><i class="bi bi-people">Liste de Patients à la Maternité</i></h3>
         </div>
         <div class="row mt-2">
             <div class="container">

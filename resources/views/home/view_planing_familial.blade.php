@@ -3,8 +3,8 @@
 @section('content')
 <div class="row card">
     <div class="card-body p-4 rounded">
-        <div class="logo-title">
-            <i class="logo-title"><h3>Personne au planing Familial</h3></i>
+        <div class="lead">
+            <h3><i class="bi bi-people">Personne au planing Familial</i></h3>
         </div>
         <div class="row mt-2">
             <div class="container">

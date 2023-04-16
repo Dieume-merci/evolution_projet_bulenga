@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('cpn_id')->constrained()->onDelete('cascade');
             $table->string('visite_cpn_designation',45)->nullable();
             $table->string('visite_cpn_obs',45)->nullable();
+            $table->timestamps();
         });
     }
 

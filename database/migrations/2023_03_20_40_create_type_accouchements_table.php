@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('type_accouchements', function (Blueprint $table) {
             $table->id();
             $table->string('type_accouchement_designation',45)->nullable();
+            $table->timestamps();
         });
     }
 

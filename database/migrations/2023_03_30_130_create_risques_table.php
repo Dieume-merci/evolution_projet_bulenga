@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('visite_cpn_id')->constrained()->onDelete('cascade');
             $table->string('risque_referer',45)->nullable();
             $table->string('risque_detecter',45)->nullable();
+            $table->timestamps();
         });
     }
     /**

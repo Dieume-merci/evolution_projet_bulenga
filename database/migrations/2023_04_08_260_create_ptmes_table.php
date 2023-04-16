@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('ptme_test_syphilis',45)->nullable();
             $table->string('ptme_resultat_test_syphilis',45)->nullable();
             $table->string('ptme_traitement_syphilis',45)->nullable();
+            $table->timestamps();
         });
     }
 

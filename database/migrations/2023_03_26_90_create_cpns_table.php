@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('cpn_femme_en_cas_risque_detecte',45)->nullable();
             $table->string('cpn_femme_en_cas_de_risque_refere',45)->nullable();
             $table->string('cpn_Const_Probl_Obs',45)->nullable();
+            $table->timestamps();
         });
     }
 

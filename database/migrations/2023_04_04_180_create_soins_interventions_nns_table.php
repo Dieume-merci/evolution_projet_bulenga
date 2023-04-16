@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('soins_interventions_nn_nn_prematures',45)->nullable();
             $table->string('soins_interventions_nn_nn_beneficiant_reanimation',45)->nullable();
             $table->string('soins_interventions_nn_nvp_au_nn',45)->nullable();
+            $table->timestamps();
         });
     }
 

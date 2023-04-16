@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pf_id')->constrained()->onDelete('cascade');
             $table->string('ac_ren_designation',45)->nullable();
+            $table->timestamps();
         });
     }
 

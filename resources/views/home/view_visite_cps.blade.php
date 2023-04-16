@@ -3,14 +3,11 @@
 @section('content')
 <div class="row card">
     <div class="card-body p-4 rounded">
-        <div class="logo-title">
-            <i class="logo-title"><h3>Liste de deces</h3></i>
+        <div class="lead">
+            <h3><i class="bi bi-people"> Liste de deces</i></h3>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-2">
             <div class="container">
-                <div class="dn-center">
-                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add_information"><span class="bi bi-plus"></span> Add</button>
-                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -63,7 +60,7 @@
                             <td>Boss</td>
                             <td>12 an(a)</td>
                             <td>25-12-2022</td>
-                            <td><button class="btn btn-danger"><span class="bi bi-trash3">ok</span></button>
+                            <td><button class="btn btn-danger"><span class="bi bi-trash3"></span></button>
                                 <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                                 <a href="#" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                         </tr>

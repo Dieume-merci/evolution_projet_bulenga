@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('bebe_ctx',45)->nullable();
             $table->string('bebe_probleme_constate',45)->nullable();
             $table->string('bebe_soins_traitement',45)->nullable();
+            $table->timestamps();
         });
     }
 

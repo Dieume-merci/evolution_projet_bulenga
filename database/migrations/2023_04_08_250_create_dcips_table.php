@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dcips', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pf_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

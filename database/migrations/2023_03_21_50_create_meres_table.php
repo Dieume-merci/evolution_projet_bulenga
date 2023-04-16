@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('mere_ctx',45)->nullable();
             $table->string('mere_conseiller_pf',45)->nullable();
             $table->string('mere_methode_pf',45)->nullable();
+            $table->timestamps();
         });
     }
 

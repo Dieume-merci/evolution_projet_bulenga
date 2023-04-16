@@ -13,7 +13,7 @@ function change_show_items(){
 }
 function shorterror(){
     swal({
-        title: "Element supprimer Avec Success",
+        title: "Element supprimé Avec Success",
         icon: "success",
         button: "Fermer",
         });

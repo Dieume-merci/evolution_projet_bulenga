@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('cpn_id')->constrained()->onDelete('cascade');
             $table->string("traitement_cpn_cpon_descrition");
             $table->dateTime("date_traitement");
+            $table->timestamps();
         });
     }
 

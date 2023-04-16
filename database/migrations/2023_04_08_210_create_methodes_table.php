@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('methodes', function (Blueprint $table) {
             $table->id();
             $table->string('methode_designation',45)->nullable();
+            $table->timestamps();
         });
     }
 

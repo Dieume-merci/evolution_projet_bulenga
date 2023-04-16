@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('maternite_statut_serologique_vih_terme',45)->nullable();
             $table->string('maternite_date_sortie_terme',45)->nullable();
             $table->string('maternite_obs_terme',45)->nullable();
+            $table->timestamps();
         });
     }
 

@@ -13,6 +13,7 @@
     <link href="{!! url('assets/css/style.css') !!}" rel="stylesheet">
     <link href="{!! url('assets/bootstrap/css/mon_style_propre.css') !!}" rel="stylesheet">
     <link href="{!! url('assets/css/app.css') !!}" rel="stylesheet">
+    <script src="{!! url('assets/vendor/simple-datatables/style.js') !!}"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;

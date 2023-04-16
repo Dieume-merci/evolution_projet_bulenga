@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('problemes_nn_infection_majeure',45)->nullable();
             $table->string('problemes_nn_malformation_cong_visible',45)->nullable();
             $table->string('problemes_nn_autres',45)->nullable();
+            $table->timestamps();
         });
     }
 

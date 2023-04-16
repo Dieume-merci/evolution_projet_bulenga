@@ -3,10 +3,10 @@
 @section('content')
 <div class="row card">
     <div class="card-body p-4 rounded">
-        <div class="logo-title">
-            <i class="logo-title"><h3>Les Methode de planing Familiale</h3></i>
+        <div class="lead">
+            <h3><i class="bi bi-peace"> Les Methode de planing Familiale</i></h3>
         </div>
-        <div class="row mt-5 dnp-georgia">
+        <div class="row mt-2 dnp-georgia">
             <div class="container">
                 <div class="dn-center">
                     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#add_information"><span class="bi bi-plus"></span> Nouvelle Sous Methode</button>
@@ -17,45 +17,21 @@
                             <th>N°</th>
                             <th>sous Methode</th>
                             <th>Methode</th>
+                            <th>Date d'Enregistrement</th>
                             <th>Supprimer & Modifier.</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>PILULE</td>
-                            <td>PILULE</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ABC</td>
-                            <td>PILULE</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Boss</td>
-                            <td>Boss</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Boss</td>
-                            <td>Boss</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Boss</td>
-                            <td>Boss</td>
-                            <td><button class="btn btn-danger"><span class="bi bi-trash3"></span></button>
-                                <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
-                        </tr>
+                        @foreach ($sous_methodes as $item)                            
+                            <tr>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->sous_methode_designation}}</td>
+                                <td>{{$item->methode_id}}</td>
+                                <td>{{$item->created_at}}</td>
+                                <td><button class="btn btn-danger"><span class="bi bi-trash3"></span></button>
+                                    <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -66,10 +42,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header logo-title">
-                <i class="logo-title"><h3 class="bi bi-people">  Ajouter Une Sous-methode</h3></i>
+                <div class="lead">
+                    <h3><i class="bi bi-people"> Ajouter Une Sous-methode</i></h3>
+                </div>
             </div>
             <div class="modal-body">
-                <form action="" class="form-group">
+            <form action="{{route("inser_sousmethode")}}" method="POST" class="form-group">
+                @csrf
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-floating">
@@ -79,11 +58,11 @@
                         </div>
                         <div class="col-lg-12 mt-2">
                             <div class="form-floating">
-                                <select name="methode_designation" class="form-control" required>
+                                <select name="methode_ide" class="form-control" required>
                                     <option value>Selectionner Une methode</option>
-                                    <option>CONDOM</option>
-                                    <option>PILULE</option>
-                                    <option>Autre</option>
+                                    @foreach ($methodes as $item_methode)
+                                        <option value="{{$item_methode->id}}">{{$item_methode->methode_designation}}</option>
+                                    @endforeach
                                 </select>
                                 <label for="">Affecter à Une Methode de Planification F.</label>
                             </div>

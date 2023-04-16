@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('visite_cpn_id')->constrained()->onDelete('cascade');
             $table->string('mild_dist_cpn1',45)->nullable();
             $table->string('mild_dist_cpn2',45)->nullable();
+            $table->timestamps();
         });
     }
 

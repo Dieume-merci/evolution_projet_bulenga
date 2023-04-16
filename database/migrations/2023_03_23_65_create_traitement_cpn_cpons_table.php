@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("traitement_designation");
             $table->string("traitement_categorie");
+            $table->timestamps();
         });
     }
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('depistage_vih_hommes_Resultat_Test',45)->nullable();
             $table->string('depistage_vih_hommes_Post_Test',45)->nullable();
             $table->dateTime('date');
+            $table->timestamps();
         });
     }
 

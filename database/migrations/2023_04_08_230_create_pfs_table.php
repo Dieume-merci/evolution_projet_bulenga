@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('pf_infecondite',45)->nullable();
             $table->string('pf_ist',45)->nullable();
             $table->string('pf_statut_serologique_vih',45)->nullable();
-            $table->dateTie('pf_date')->nullable();
+            $table->dateTime('pf_date')->nullable();
+            $table->timestamps();
         });
     }
 
