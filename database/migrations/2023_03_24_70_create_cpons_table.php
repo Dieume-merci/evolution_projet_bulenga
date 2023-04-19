@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('cpons', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained()->onDelete('cascade');
-            $table->dateTime("date_cpon");
             $table->timestamps();
         });
     }

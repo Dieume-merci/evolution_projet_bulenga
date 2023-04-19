@@ -22,16 +22,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sous_methodes as $item)                            
+                        @forelse ($sous_methodes_objet as $items)
                             <tr>
-                                <td>{{$item->id}}</td>
-                                <td>{{$item->sous_methode_designation}}</td>
-                                <td>{{$item->methode_id}}</td>
-                                <td>{{$item->created_at}}</td>
+                                <td>{{$items->id}}</td>
+                                <td>{{$items->sous_methode_designation}}</td>
+                                <td>{{$items->methode_designation}}</td>
+                                <td> le {{$items->created_at}}</td>
                                 <td><button class="btn btn-danger"><span class="bi bi-trash3"></span></button>
-                                    <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
+                                    <a href="{{$items->id}}" class="btn btn-warning"><span class="bi bi-book"></span></a>
                             </tr>
-                        @endforeach
+                            @empty
+                            <tr>
+                                <td class="text-center" colspan="5"> Aucune Entrée</td>
+                            </tr>
+                        @endforelse 
                     </tbody>
                 </table>
             </div>

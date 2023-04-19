@@ -21,15 +21,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($methodes as $item)
+                        @forelse ($methodes as $item)
                             <tr>
                             <td>{{$item->id}}</td>
                             <td>{{$item->methode_designation}}</td>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{$item->created_at->format("d-m-y à h:i:s")}}</td>
                                 <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
                                     <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                             </tr>
-                        @endforeach
+                        @empty
+                        <td class="text-center" colspan="4"> Aucune Entrée</td>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

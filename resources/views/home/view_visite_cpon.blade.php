@@ -13,52 +13,24 @@
                         <tr>
                             <th>N°</th>
                             <th>Nom</th>
-                            <th>Age</th>
                             <th>Date</th>
                             <th>Voir Plus & Obs.</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse ($object_cpon as $object_cpon_items)
+                            <tr>
+                                <td>{{$object_cpon_items->id}}</td>
+                                <td>{{$object_cpon_items->nom}} {{$object_cpon_items->postnom}} {{$object_cpon_items->prenom}}</td>
+                                <td>{{$object_cpon_items->created_at}}</td>
+                                <td><button onclick="shorterror()" class="btn btn-danger"><span class="bi bi-trash3"></span></button>
+                                    <a href="{{route("exp_cpon",$object_cpon_items->id)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            </tr>
+                        @empty
                         <tr>
-                            <td>1</td>
-                            <td>Boss</td>
-                            <td>12 an(a)</td>
-                            <td>25-12-2022</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="{{route("exp_cpon",1)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
+                            <td colspan="5" class="text-center"> Aucune Entrée Disponible</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Boss BossBossBossBossBoss</td>
-                            <td>12 an(a)</td>
-                            <td>25-12-2022</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="{{route("exp_cpon",1)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Boss</td>
-                            <td>12 an(a)</td>
-                            <td>25-12-2022</td>
-                            <td><a onclick="shorterror()" href="#" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="{{route("exp_cpon",1)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Boss</td>
-                            <td>12 an(a)</td>
-                            <td>25-12-2022</td>
-                            <td><a onclick="shorterror()" href="" class="btn btn-danger"><span class="bi bi-trash3"></span></a>
-                                <a href="{{route("exp_cpon",1)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Boss</td>
-                            <td>12 an(a)</td>
-                            <td>25-12-2022</td>
-                            <td><button onclick="shorterror()" class="btn btn-danger"><span class="bi bi-trash3"></span></button>
-                                <a href="{{route("exp_cpon",1)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
-                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>

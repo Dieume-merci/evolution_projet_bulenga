@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\sous_methode;
 use App\Models\methode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SousMethodeController extends Controller
 {
     public function viewsousmethode()
     {
         return view('Home.view_sous_methode_pf',[
-            'sous_methodes'=>Sous_methode::all(),
+            'sous_methodes_objet'=>DB::table('Methodes')
+                            ->join('Sous_methodes','Methodes.id','=','Sous_methodes.methode_id')->get(),
             'methodes'=>methode::all(),
         ]);
     }

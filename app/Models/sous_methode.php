@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class sous_methode extends Model
+class Sous_methode extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function getsous_methode():BelongsTo
+    {
+        return $this->belongsTo(Methode::class);
+    }
 }

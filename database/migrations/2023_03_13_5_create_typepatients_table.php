@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appartennir_traitement_cpons', function (Blueprint $table) {
-            $table->foreignId("traitement_cpn_cpon_id")->constrained()->OnDelete("cascade");
-            $table->foreignId('cpn_id')->constrained()->onDelete('cascade');
-            $table->string("traitement_cpn_cpon_descrition");
-            $table->dateTime("date_traitement");
+        Schema::create('typepatients', function (Blueprint $table) {
+            $table->id();
+            $table->string('designation',50)->unique();;
+            $table->string('description',50);
+            $table->tinyInteger('status')->default('1');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appartennir_traitement_cpons');
+        Schema::dropIfExists('typepatients');
     }
 };

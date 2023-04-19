@@ -8,7 +8,7 @@
         <button href="#" id="Planification" class="btn btn-link btn-sm dropdown-toggle" type="button" id="dorpper" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="bi bi-info-square"></span></button>
             <ul class="dropdown-menu" aria-label="dorpper">
-                <li><a href="{{ route("add_pf",1)}}" class="btn btn-link dropdown-item">Ajouter</a></li>
+                <li><a href="{{ route("add_pf",$info_planing->id)}}" class="btn btn-link dropdown-item">Ajouter</a></li>
             </ul>
         </div>
     </div>
@@ -18,7 +18,6 @@
             <button href="#" id="consulpn" class="btn btn-link btn-sm dropdown-toggle" type="button" id="dorpper0" data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="bi bi-info-square"></span></button>
                 <ul class="dropdown-menu" aria-label="dorpper0">
-                <!-- <li><button href="button" class="btn btn-link dropdown-item">Ajouter</button></li> -->
                     <li><a href="{{ route('view_acc_cpn',1)}}" class="btn btn-link dropdown-item">Voir</a></li>
                 </ul>
             </div>
