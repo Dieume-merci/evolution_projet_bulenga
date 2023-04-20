@@ -42,5 +42,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('inser/sous-methode', 'SousMethodeController@store')->name("inser_sousmethode");
     Route::post('inser/type-accouchement', 'TypeAccouchementController@store')->name("inser_typeacouchement");
     Route::get('inserer/planing/familial', 'PfController@store')->name("inserer_planing_familial");
+    Route::post('inserer/Traitement/pivot', 'CpontraitementcponController@store')->name("inserer_Traitement_pivot");
 });
 

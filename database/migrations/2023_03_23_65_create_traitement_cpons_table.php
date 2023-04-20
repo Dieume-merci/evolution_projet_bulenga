@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('traitement_cpons', function (Blueprint $table) {
             $table->id();
             $table->string("traitement_designation");
-            $table->string("traitement_categorie");
             $table->timestamps();
         });
     }

@@ -13,8 +13,7 @@ class PfController extends Controller
         public function viewPlaningFamilial()
         {
             return view('Home.view_planing_familial',[
-            'object_patient'=>DB::table('pfs')
-            ->join('Patients','Patients.id','=','pfs.patient_id')->get(),
+            'object_patient'=>pf::with("getplaning")->get(),
             ]);
         }
         public function explorationPlaningF(Pf $planing)

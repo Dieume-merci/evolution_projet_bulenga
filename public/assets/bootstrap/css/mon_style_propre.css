@@ -13,6 +13,9 @@
 .dn-justifier{
     margin-top: 43px;
 }
+.dn-hidden{
+    display:none;
+}
 #bouttonright{
     display: inline-block;
     height: 0;
@@ -29,3 +32,14 @@
     border-right: 20px solid red;
     border-bottom: 13px solid transparent;
     }
+.pull-right{
+    padding-right:15px;
+    padding-left:0;
+    text-align:right;
+    border-right:5px solid #eee;
+    border-left:0;
+}
+.dn-margetable{
+    width: 2%;
+    color:red;
+}

@@ -21,8 +21,11 @@
                         @forelse ($object_cpon as $object_cpon_items)
                             <tr>
                                 <td>{{$object_cpon_items->id}}</td>
-                                <td>{{$object_cpon_items->nom}} {{$object_cpon_items->postnom}} {{$object_cpon_items->prenom}}</td>
-                                <td>{{$object_cpon_items->created_at}}</td>
+                                <td>{{$object_cpon_items->getpatient->nom}} 
+                                    {{$object_cpon_items->getpatient->postnom}} 
+                                    {{$object_cpon_items->getpatient->prenom}}
+                                </td>
+                                <td>le {{$object_cpon_items->created_at->format("d-m-Y à H:i:s")}}</td>
                                 <td><button onclick="shorterror()" class="btn btn-danger"><span class="bi bi-trash3"></span></button>
                                     <a href="{{route("exp_cpon",$object_cpon_items->id)}}" class="btn btn-info"><span class="bi bi-info-square"></span></a></td>
                             </tr>

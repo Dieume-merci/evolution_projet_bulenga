@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('traitement_cpon_cpons', function (Blueprint $table) {
-            $table->foreignId("traitement_cpon_id")->constrained()->OnDelete("cascade");
+        Schema::create('cpon_traitement_cpons', function (Blueprint $table) {
             $table->foreignId('cpon_id')->constrained()->onDelete('cascade');
-            $table->string("traitement_cpon_description");
-            $table->dateTime("date_traitement");
+            $table->foreignId("traitement_cpon_id")->constrained()->OnDelete("cascade");
             $table->timestamps();
         });
     }
