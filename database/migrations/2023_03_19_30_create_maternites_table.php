@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('maternites', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('patient_id')->constrained()->onDelete('cascade');
             $table->string('maternite_grossesse_a_terme',45)->nullable();
-            $table->string('maternite_date_entree_terme',45)->nullable();
-            $table->string('maternite_statut_serologique_vih_terme',45)->nullable();
-            $table->string('maternite_date_sortie_terme',45)->nullable();
-            $table->string('maternite_obs_terme',45)->nullable();
+            $table->string('maternite_statut_serologique_vih',45)->nullable();
+            $table->string('maternite_date_sortie',45)->nullable();
+            $table->string('maternite_obs',45)->nullable();
             $table->timestamps();
         });
     }

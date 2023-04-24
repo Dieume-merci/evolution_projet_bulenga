@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                @include('components.sidebar.sous_menu_mere')
+                {{-- @include('components.sidebar.sous_menu_mere') --}}
             </div>
         </div>
     </div>

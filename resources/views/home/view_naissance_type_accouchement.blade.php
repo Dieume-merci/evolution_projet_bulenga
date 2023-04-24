@@ -4,7 +4,7 @@
 <div class="row card dnp-georgia">
     <div class="card-body p-4 rounded">
         <div class="lead">
-            <h3><i class="bi bi-people"> Type d'accoucheent</i></h3>
+            <h3><i class="bi bi-people"> Type d'accouchement</i></h3>
         </div>
         <div class="row mt-2">
             <div class="container">
@@ -21,11 +21,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <p class=dn-hidden>{{$compteur=0}}</p>
                         @forelse ($type_d_accouchement as $items_type_d_acoucheent)
                             <tr>
-                                <td>{{$items_type_d_acoucheent->id}}</td>
+                                <td>{{$compteur+=1}}</td>
                                 <td>{{$items_type_d_acoucheent->type_accouchement_designation}}</td>
-                                <td> le {{$items_type_d_acoucheent->created_at->format("d-m-y à h:i:s")}}</td>
+                                <td> le {{$items_type_d_acoucheent->created_at->format("d-m-Y à H:i:s")}}</td>
                                 <td><button class="btn btn-danger"><span class="bi bi-trash3"></span></button>
                                     <a href="#" class="btn btn-warning"><span class="bi bi-book"></span></a>
                             </tr>
@@ -47,7 +48,7 @@
         <div class="modal-content">
             <div class="modal-header logo-title">
                 <div class="lead">
-                    <h3><i class="logo-title">Aouter Un type d'Acouchement</i></h3>
+                    <h3><i class="logo-title">Ajouter Un type d'Accouchement</i></h3>
                 </div>
             </div>
             <div class="modal-body">
