@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MereController extends Controller
+class Mere_informationController extends Controller
 {
     
 }

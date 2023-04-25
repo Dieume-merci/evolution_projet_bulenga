@@ -13,25 +13,14 @@ use App\Models\Deces;
 use App\Models\Accouchement;
 use App\Models\Attestation;
 use App\Models\Complications;
-use App\Models\Mere;
+use App\Models\Mere_information;
 
 class AccouchementController extends Controller
 {
     public function store(Request $requete_formulaire)
     {
         DB::transaction(function() use ($requete_formulaire){
-                // $Mere=Mere::create([
-            //     'patient_id'=>$requete_formulaire->patient_id,
-            //     'mere_problemesMat'=>$requete_formulaire->mere_problemesMat,
-            //     'mere_soins_traitement'=>$requete_formulaire->mere_soins_traitement,
-            //     'mere_fer_folate'=>$requete_formulaire->mere_fer_folate,
-            //     'mere_vit_a'=>$requete_formulaire->mere_vit_a,
-            //     'mere_mild'=>$requete_formulaire->mere_mild,
-            //     'mere_arv'=>$requete_formulaire->mere_arv,
-            //     'mere_ctx'=>$requete_formulaire->mere_ctx,
-            //     'mere_conseiller_pf'=>$requete_formulaire->mere_conseiller_pf,
-            //     'mere_methode_pf'=>$requete_formulaire->mere_methode_pf,
-            // ]);
+            
             $Attestation=Attestation::create([
                 'nom_enfant'=>$requete_formulaire->nom_enfant,
                 'postnom_enfant'=>$requete_formulaire->postnom_enfant,
@@ -42,8 +31,7 @@ class AccouchementController extends Controller
                 'nompere'=>$requete_formulaire->nompere,
                 'postnom_pere'=>$requete_formulaire->postnom_pere,
                 'prenom_pere'=>$requete_formulaire->prenom_pere,
-                'telephone_pere'=>1,
-                // 'telephone_pere'=>$requete_formulaire->telephone_pere,
+                'telephone_pere'=>$requete_formulaire->telephone_pere,
                 'adresse_pere'=>$requete_formulaire->adresse_pere,
                 'nationalite_pere'=>$requete_formulaire->nationalite_pere,
                 'lieudenassance_pere'=>$requete_formulaire->lieudenassance_pere,
@@ -63,12 +51,21 @@ class AccouchementController extends Controller
                 'type_accouchement_id'=>$requete_formulaire->type_accouchement_id,
                 'user_id'=>$requete_formulaire->user_id,
                 'bebe_id'=>$Bebe->id,
-                'mere_id'=>1,
-                // 'mere_id'=>$Mere->Id,
-                'maternite_id'=>1,
-                // 'maternite_id'=>$requete_formulaire->maternite_id,
-                'accouchement_date_accouchement'=>"2023-04-12 11:42:28",
-                // 'accouchement_date_accouchement'=>$requete_formulaire->accouchement_date_accouchement,
+                'maternite_id'=>$requete_formulaire->maternite_id,
+                'accouchement_date_accouchement'=>$requete_formulaire->accouchement_date_accouchement,
+            ]);
+
+            $Mere_information=Mere_information::create([
+                'accouchement_id'=>$Accouchement->id,
+                'problemesMat'=>$requete_formulaire->mere_problemesMat,
+                'soins_traitement'=>$requete_formulaire->mere_soins_traitement,
+                'fer_folate'=>$requete_formulaire->mere_fer_folate,
+                'vit_a'=>$requete_formulaire->mere_vit_a,
+                'mild'=>$requete_formulaire->mere_mild,
+                'arv'=>$requete_formulaire->mere_arv,
+                'ctx'=>$requete_formulaire->mere_ctx,
+                'conseiller_pf'=>$requete_formulaire->mere_conseiller_pf,
+                'methode_pf'=>$requete_formulaire->mere_methode_pf,
             ]);
             
             $problemenn=Problemes_nn::create([
@@ -109,7 +106,7 @@ class AccouchementController extends Controller
                 
             ]);
         });
-        return ($requete_formulaire);
+        return redirect()->back()->with("success","Informations ont été bien Ajoutées");
 
     }
 }

@@ -14,8 +14,4 @@ class patient extends Model
     {
         return $this->hasMany(Cpon::class);
     }
-    public function get_patient_from_mere():HasMany
-    {
-        return $this->hasMany(Mere::class);
-    }
 }

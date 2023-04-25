@@ -2,6 +2,7 @@ function show_step(information){
     document.getElementById("etape_1").style.display='none';
     document.getElementById("etape_2").style.display='none';
     document.getElementById("etape_3").style.display='none';
+    document.getElementById("etape_4").style.display='none';
     document.getElementById(information).style.display='flex';
 }
 function change_show_items(){

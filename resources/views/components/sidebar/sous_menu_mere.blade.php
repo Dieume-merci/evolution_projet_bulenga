@@ -39,9 +39,9 @@
                     </legend>
                     <p class="dn-hidden">{{$compteur=1}}</p>
                     @empty(!$objet_mere)
-                        @foreach ($objet_mere->get_mere_from_accouchement as $item_objet_mere)
+                        @foreach ($objet_mere as $item_objet_mere)
                             <div class="mt-2">
-                            <a href="{{$item_objet_mere->id}}"><span class="bi bi-eye"></span> {{$compteur}}<sup>e</sup> Accouchement <span class="dn-black">du {{$item_objet_mere->accouchement_date_accouchement}}</span></a>
+                            <a href="{{$item_objet_mere->patient_id}}"><span class="bi bi-eye"></span> {{$compteur}}<sup>e</sup> Accouchement <span class="dn-black">du {{$item_objet_mere->accouchement_date_accouchement}}</span></a>
                             </div>
                             <p class="dn-hidden">{{$compteur+=1}}</p>
                         @endforeach

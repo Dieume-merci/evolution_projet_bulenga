@@ -6,17 +6,22 @@
                 <legend>
                     <small><i>Identité de l'Enfant</i><hr width="50%" class="logo-title"></small>
                 </legend>
+                <input type="hidden" name="maternite_id" value="{{$objet_maternite->id}}">
                 <div class="input-group mt-2">
                     <span class="input-group-text">Nom </span>
                     <input type="text" name="nom_enfant" class="form-control" required placeholder="Entrer le nom de l'enfant">
                 </div>
                 <div class="input-group mt-2">
                     <span class="input-group-text">PostNom</span>
-                    <input type="text" name="postnom_enfant" class="form-control" required placeholder="Entrer une information">
+                    <input type="text" name="postnom_enfant" class="form-control" required placeholder="Entrer le postnom de l'enfant">
                 </div>
                 <div class="input-group mt-2">
                     <span class="input-group-text">Prenom</span>
-                    <input type="text" name="prenom_enfant" class="form-control" placeholder="Entrer une information">
+                    <input type="text" name="prenom_enfant" class="form-control" placeholder="Entrer un prenom de l'enfant">
+                </div>
+                <div class="input-group mt-2">
+                    <span class="input-group-text">Contact</span>
+                    <input type="text" name="telephone_pere" minlength="10" maxlength="13" class="form-control" placeholder="Entrer le numero du telephone du pere">
                 </div>
                 <div class="input-group mt-2">
                     <span class="input-group-text">Civilité</span>
@@ -197,7 +202,80 @@
                 <p onclick="show_step('etape_3')" class="btn-items" id="bouttonright"></p>
             </div>
         </div>
+        
         <div class="row dnh" id="etape_3">
+            <div class="col-lg-6">
+                <legend> <small><i>Probleme lié à La mere</i><hr width="50%" class="logo-title"></small></legend>
+            <div class="form-floating mt-2">
+                <input type="text"  name="mere_problemesMat" class="form-control" required max="100">
+                <label>Probleme de maternité identifié</label>
+            </div>
+            <div class="form-floating mt-2">
+                <input type="text"  name="mere_soins_traitement" class="form-control" required max="100">
+                <label>Soins/Traitement</label>
+            </div>
+            <div class="form-floating mt-2">
+                <select name="mere_fer_folate" class="form-control" required>
+                    <option value>A-t-elle recu le Fer-folate ?</option>
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+                <label>Fer-folate</label>
+            </div>
+            <div class="form-floating mt-2">
+                <select name="mere_vit_a" class="form-control" required>
+                    <option>A-t-elle recu le vitamine A ?</option>
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+                <label>Vitamine A</label>
+            </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-floating mt-5">
+                    <select name="mere_mild" class="form-control" required>
+                        <option>A-t-elle recu le MILD ?</option>
+                        <option>Oui</option>
+                        <option>Non</option>
+                    </select>
+                    <label>MILD</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <select name="mere_arv" class="form-control" required>
+                        <option>A-t-elle recu le ARV ?</option>
+                        <option>Oui</option>
+                        <option>Non</option>
+                    </select>
+                    <label>ARV</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <select name="mere_ctx" class="form-control" required>
+                        <option>A-t-elle recu le CTX ?</option>
+                        <option>Oui</option>
+                        <option>Non</option>
+                    </select>
+                    <label>CTX</label>
+                </div>
+                <div class="form-floating mt-2">
+                    <textarea cols="30" rows="10" name="mere_conseiller_pf" class="form-control" required></textarea>
+                    <label>Conseil PF</label>
+                </div>
+            </div>
+            <div class="form-floating mt-2">
+                <select name="mere_methode_pf" class="form-control" required>
+                    <option value>Selectionner Une methode</option>
+                    @foreach ($methodes as $item_methode)
+                        <option value="{{$item_methode->id}}">{{$item_methode->methode_designation}}</option>
+                    @endforeach
+                </select>
+                <label for="">Methode de Planification F.</label>
+            </div>
+            <div class="btn-group dn-left mt-3">
+                <p onclick="show_step('etape_2')" class="btn-items" id="bouttonleft"></p>
+                <p onclick="show_step('etape_4')" class="btn-items" id="bouttonright"></p>
+            </div>
+        </div>
+        <div class="row dnh" id="etape_4">
             <div class="col-lg-6">
                 <legend> <small><i>Probleme A la Naissance</i><hr width="50%" class="logo-title"></small></legend>
             <div class="form-floating mt-2">
@@ -240,9 +318,9 @@
                 </div>
                 <div class="form-floating mt-2">
                     <select name="type_accouchement_id" class="form-control" required>
-                        <option>Selectionner le type d'accouchement ?</option>
+                        <option value>Selectionner le type d'accouchement ?</option>
                         @foreach ($objet_type_accouchement as $item_objet_type_accouchement)
-                    <option value="{{$item_objet_type_accouchement->id}}">{{$item_objet_type_accouchement->type_accouchement_designation}}</option>
+                    <option>{{$item_objet_type_accouchement->type_accouchement_designation}}</option>
                         @endforeach
                     </select>
                     <label>Selectionner Un Type d'accouchement</label>
@@ -256,8 +334,12 @@
                 </select>
                 <label>Medecin Traitant </label>
             </div>
+            <div class="form-floating mt-2">
+                <input type="date" name="accouchement_date_accouchement" class="form-control" required>
+                <label>Date d'Accouchement </label>
+            </div>
             <div class="btn-group dn-left mt-3">
-                <p onclick="show_step('etape_2')" class="btn-items" id="bouttonleft"></p>
+                <p onclick="show_step('etape_3')" class="btn-items" id="bouttonleft"></p>
             </div>
             <i class="mt-3">
                 <button class="btn btn-success"><span class="bi bi-save2"></span> Enregister</button>
