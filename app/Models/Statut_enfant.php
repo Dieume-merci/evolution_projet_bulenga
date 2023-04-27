@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class naiss_vivante extends Model
+class Statut_enfant extends Model
 {
     protected $fillable=[
-        'accouchement_id',
-        'naiss_vivante_designation',
+        'bebe_id',
+        'designation','statut',
     ];
     use HasFactory;
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DecesController extends Controller
+class Statut_enfant extends Controller
 {
     public function adddeces()
     {

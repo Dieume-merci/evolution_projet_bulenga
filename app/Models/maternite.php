@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class maternite extends Model
@@ -14,5 +15,9 @@ class maternite extends Model
     public function getmaternite():BelongsTo
     {
         return $this->belongsTo(Patient::class,'patient_id');
+    }
+    public function get_maternite_from_accouchement():HasMany
+    {
+        return $this->hasMany(Accouchement::class);
     }
 }

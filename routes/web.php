@@ -26,7 +26,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('explorer-Maternite/{id}', 'MaterniteController@viewmateriniteself')->name("view_acc");
     Route::get('view-consultation-pre-natale/{id}', 'CpnController@viewcpnacouchement')->name("view_acc_cpn");
     Route::get('view-patient-maternite/', 'MaterniteController@viewmaternite')->name("view_mere");
-    Route::get('view-deces/', 'DecesController@viewdeces')->name("view_deces");
+    Route::get('view-deces/', 'Statut_enfant@viewdeces')->name("view_deces");
     Route::get('view-type-acouchement/', 'TypeAccouchementController@viewtypeacouchement')->name("view_type_acouchement");
     Route::get('view-planing-familial/', 'PfController@viewPlaningFamilial')->name("view_plan");
     Route::get('view-methode/', 'MethodeController@viewmethode')->name("view_methode");
@@ -45,5 +45,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('inserer/materinite', 'MaterniteController@store')->name("inser_maternite");
     Route::post('inserer/Traitement/pivot', 'CpontraitementcponController@store')->name("inserer_Traitement_pivot");
     Route::post('inserer/accouchement/', 'AccouchementController@store')->name("inserer_accouchement");
+    Route::post('inserer/accouchement/jumeau', 'AccouchementController@storeJumeau')->name("inserer_accouchement_jumeau");
 });
 

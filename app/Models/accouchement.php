@@ -11,15 +11,15 @@ class accouchement extends Model
 {
     protected $fillable=[
         'type_accouchement_id','user_id','bebe_id',
-        'mere_id','maternite_id','accouchement_date_accouchement'
+        'maternite_id','accouchement_date_accouchement'
     ];
     use HasFactory;
     public function get_association_acouchement_maternite():HasMany
     {
         return $this->hasMany(Maternite::class);
     }
-    public function get_accouchement_from_mere():BelongsTo
+    public function get_accouchement_from_bebe():HasMany
     {
-        return $this->belongsTo(Mere::class);
+        return $this->hasMany(Bebe::class);
     }
 }

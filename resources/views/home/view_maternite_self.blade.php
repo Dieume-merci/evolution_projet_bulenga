@@ -88,5 +88,18 @@
         </div>
     </div>
 </div>
+<div class="modal fade dnp-georgia" data-bs-backdrop="static" id="add_jumeaux_bebe_siamois" aria-hidden="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header logo-title">
+                <h3 class="bi bi-people"><i> Associer Un Enfant à cet Accouchement</i></h3>
+            </div>
+                @include('components.associer_enfant_a_accouchement')
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-bs-dismiss="modal"><span class="bi bi-exit"></span> Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

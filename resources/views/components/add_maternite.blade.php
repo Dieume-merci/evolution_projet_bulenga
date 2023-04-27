@@ -1,5 +1,6 @@
 <div class="modal-body text-center">
-<form class="form-group" method="POST" action="{{route("inser_maternite")}}">
+    <p id="notification_deux"></p>
+<form class="form-group" action="{{route("inser_maternite")}}" id="formulaire_deux">
         @csrf
         <input type="hidden" value="{{$objet_maternite->id}}" name="id_maternite">
         <div class="form-floating mt-2">
@@ -23,7 +24,7 @@
             <label>Observation</label>
         </div> 
         <div class="mt-3">
-        <button class="btn btn-success"><label class="bi bi-save2"></label> Enregister</button>
+        <button class="btn btn-success" id="boutton_deux"><label class="bi bi-save2"></label> Enregister</button>
         </div>
     </form>
 </div>

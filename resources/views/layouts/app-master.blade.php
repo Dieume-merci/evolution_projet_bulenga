@@ -51,6 +51,7 @@
     <script src="{!! url('assets/js/main.js') !!}"></script>
     <script src="{!! url('assets/js/sweet_alert.js') !!}"></script>
     <script src="{!! url('assets/js/my_files.js') !!}"></script>
+    <script src="{!! url('assets/js/mes_insertions.js') !!}"></script>
     @show
 </body>
 </html>

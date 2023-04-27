@@ -3,25 +3,93 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Problemes_nn;
 use App\Models\Bebe;
-use App\Models\Naiss_vivante;
+use App\Models\Statut_enfant;
 use App\Models\Soins_interventions_nn;
-use App\Models\Mort_ne;
-use App\Models\Deces;
 use App\Models\Accouchement;
 use App\Models\Attestation;
 use App\Models\Complications;
 use App\Models\Mere_information;
+use App\Rules\dateafter;
 
 class AccouchementController extends Controller
 {
     public function store(Request $requete_formulaire)
     {
+        $element=validator::make($requete_formulaire->all(),[
+            'maternite_id'=>'required|unique:accouchements|max:250',
+            'nom_enfant'=>'required|max:250',
+            'postnom_enfant'=>'required|max:250',
+            'telephone_pere'=>'min:10|max:13|min:10',
+            'genre'=>'required|max:250',
+            'lieu_de_naissance'=>'required|max:250',
+            'date_de_naissance'=>'required|max:250',
+            'nompere'=>'required|max:250',
+            'postnom_pere'=>'required|max:250',
+            'prenom_pere'=>'required|max:250',
+            'adresse_pere'=>'required|max:250',
+            'nationalite_pere'=>'required|max:250',
+            'lieudenassance_pere'=>'required|max:250',
+            'datenaissance_pere'=>'required|max:250',
+            'bebe_complicationsAlaNaiss'=>'required|max:250',
+            'bebe_prc'=>'required|max:250',
+            'bebe_arv'=>'required|max:250',
+            'bebe_ctx'=>'required|max:250',
+            'bebe_probleme_constate'=>'required|max:250',
+            'bebe_soins_traitement'=>'required|max:250',
+            'etat_de_l_enfant'=>'required|max:250',
+            'designation'=>'required|max:250',
+            'complication_designation'=>'required|max:250',
+            'soins_interventions_nn_nn_soins_essentiels'=>'required|max:250',
+            'soins_interventions_nn_nn_allaites_dans_heure'=>'required|max:250',
+            'soins_interventions_nn_ayant_recu_at_ben_iv_im'=>'required|max:250',
+            'soins_interventions_nn_nn_methode_Kangourou'=>'required|max:250',
+            'soins_interventions_nn_nn_prematures'=>'required|max:250',
+            'soins_interventions_nn_nn_beneficiant_reanimation'=>'required|max:250',
+            'soins_interventions_nn_nvp_au_nn'=>'required|max:250',
+            'mere_problemesMat'=>'required|max:250',
+            'mere_fer_folate'=>'required|max:250',
+            'mere_vit_a'=>'required|max:250',
+            'mere_mild'=>'required|max:250',
+            'mere_arv'=>'required|max:250',
+            'mere_ctx'=>'required|max:250',
+            'mere_conseiller_pf'=>'required|max:250',
+            'mere_methode_pf'=>'required|max:250',
+            'problemes_nn_conjonctivite_nn'=>'required|max:250',
+            'problemes_nn_asphyxie_nn'=>'required|max:250',
+            'problemes_nn_infection_majeure'=>'required|max:250',
+            'problemes_nn_malformation_cong_visible'=>'required|max:250',
+            'problemes_nn_autres'=>'required|max:250',
+            'type_accouchement_id'=>'required|max:250',
+            'user_id'=>'required|max:250',
+            'accouchement_date_accouchement'=>'required|max:250',
+        ]);
+        if($element->stopOnFirstFailure()->fails()){
+            $erreur=$element->errors()->all();
+            return($erreur[0]);
+        }
         DB::transaction(function() use ($requete_formulaire){
-            
+            $Accouchement=Accouchement::create([
+                'type_accouchement_id'=>$requete_formulaire->type_accouchement_id,
+                'user_id'=>$requete_formulaire->user_id,
+                'maternite_id'=>$requete_formulaire->maternite_id,
+                'accouchement_date_accouchement'=>$requete_formulaire->accouchement_date_accouchement,
+            ]);
+            $Bebe=Bebe::create([
+                'accouchement_id'=>$Accouchement->id,
+                'bebe_complicationsAlaNaiss'=>$requete_formulaire->bebe_complicationsAlaNaiss,
+                'bebe_prc'=>$requete_formulaire->bebe_prc,
+                'bebe_arv'=>$requete_formulaire->bebe_arv,
+                'bebe_ctx'=>$requete_formulaire->bebe_ctx,
+                'bebe_statut'=>$requete_formulaire->etat_de_l_enfant,
+                'bebe_probleme_constate'=>$requete_formulaire->bebe_probleme_constate,
+                'bebe_soins_traitement'=>$requete_formulaire->bebe_soins_traitement,
+            ]);
             $Attestation=Attestation::create([
+                'bebe_id'=>$Bebe->id,
                 'nom_enfant'=>$requete_formulaire->nom_enfant,
                 'postnom_enfant'=>$requete_formulaire->postnom_enfant,
                 'prenom_enfant'=>$requete_formulaire->prenom_enfant,
@@ -37,24 +105,6 @@ class AccouchementController extends Controller
                 'lieudenassance_pere'=>$requete_formulaire->lieudenassance_pere,
                 'datenaissance_pere'=>$requete_formulaire->datenaissance_pere,
             ]);
-
-            $Bebe=Bebe::create([
-                'attestation_id'=>$Attestation->id,
-                'bebe_complicationsAlaNaiss'=>$requete_formulaire->bebe_complicationsAlaNaiss,
-                'bebe_prc'=>$requete_formulaire->bebe_prc,
-                'bebe_arv'=>$requete_formulaire->bebe_arv,
-                'bebe_ctx'=>$requete_formulaire->bebe_ctx,
-                'bebe_probleme_constate'=>$requete_formulaire->bebe_probleme_constate,
-                'bebe_soins_traitement'=>$requete_formulaire->bebe_soins_traitement,
-            ]);
-            $Accouchement=Accouchement::create([
-                'type_accouchement_id'=>$requete_formulaire->type_accouchement_id,
-                'user_id'=>$requete_formulaire->user_id,
-                'bebe_id'=>$Bebe->id,
-                'maternite_id'=>$requete_formulaire->maternite_id,
-                'accouchement_date_accouchement'=>$requete_formulaire->accouchement_date_accouchement,
-            ]);
-
             $Mere_information=Mere_information::create([
                 'accouchement_id'=>$Accouchement->id,
                 'problemesMat'=>$requete_formulaire->mere_problemesMat,
@@ -76,9 +126,10 @@ class AccouchementController extends Controller
                 'problemes_nn_malformation_cong_visible'=>$requete_formulaire->problemes_nn_malformation_cong_visible,
                 'problemes_nn_autres'=>$requete_formulaire->problemes_nn_autres, 
             ]);
-            $Naiss_vivante=Naiss_vivante::create([
-                'accouchement_id'=>$Accouchement->id,
-                'naiss_vivante_designation'=>$requete_formulaire->naiss_vivante_designation,
+            $Naiss_vivante=Statut_enfant::create([
+                'bebe_id'=>$Bebe->id,
+                'designation'=>$requete_formulaire->designation,
+                'statut'=>$requete_formulaire->etat_de_l_enfant,
             ]);
             $Soins_interventions_nn=Soins_interventions_nn::create([
                 'accouchement_id'=>$Accouchement->id,
@@ -90,14 +141,131 @@ class AccouchementController extends Controller
                 'soins_interventions_nn_nn_beneficiant_reanimation'=>$requete_formulaire->soins_interventions_nn_nn_beneficiant_reanimation,
                 'soins_interventions_nn_nvp_au_nn'=>$requete_formulaire->soins_interventions_nn_nvp_au_nn,
             ]);
-            $Mort_ne=Mort_ne::create([
+            $Complications=Complications::create([
                 'accouchement_id'=>$Accouchement->id,
-                'mort_ne_designation'=>$requete_formulaire->mort_ne_designation,
+                'complication_designation'=>$requete_formulaire->complication_designation,
+                'complication_complications_obstetricales'=>$requete_formulaire->complication_complications_obstetricales,
+                
             ]);
-            $Deces=Deces::create([
+        });
+        return(1);
+
+    }
+    public function storeJumeau(Request $requete_formulaire){
+        $object_accouchement_bebe=Accouchement::with("get_accouchement_from_bebe")->get()->where("maternite_id",$requete_formulaire->maternite_id)->last();
+        $retour_data=Bebe::where("accouchement_id",$object_accouchement_bebe->id)->get()->last();
+        $donnee_attestation=Attestation::where("bebe_id",$retour_data->id)->get()->last();
+        $element=validator::make($requete_formulaire->all(),[
+            'maternite_id'=>'required|max:250',
+            'nom_enfant'=>'required|max:250',
+            'postnom_enfant'=>'required|max:250',
+            'genre'=>'required|max:250',
+            'lieu_de_naissance'=>'required|max:250',
+            'date_de_naissance'=>'required|max:250',
+            'bebe_complicationsAlaNaiss'=>'required|max:250',
+            'bebe_prc'=>'required|max:250',
+            'bebe_arv'=>'required|max:250',
+            'bebe_ctx'=>'required|max:250',
+            'bebe_probleme_constate'=>'required|max:250',
+            'bebe_soins_traitement'=>'required|max:250',
+            'etat_de_l_enfant'=>'required|max:250',
+            'complication_designation'=>'required|max:250',
+            'soins_interventions_nn_nn_soins_essentiels'=>'required|max:250',
+            'soins_interventions_nn_nn_allaites_dans_heure'=>'required|max:250',
+            'soins_interventions_nn_ayant_recu_at_ben_iv_im'=>'required|max:250',
+            'soins_interventions_nn_nn_methode_Kangourou'=>'required|max:250',
+            'soins_interventions_nn_nn_prematures'=>'required|max:250',
+            'soins_interventions_nn_nn_beneficiant_reanimation'=>'required|max:250',
+            'soins_interventions_nn_nvp_au_nn'=>'required|max:250',
+            'mere_problemesMat'=>'required|max:250',
+            'mere_fer_folate'=>'required|max:250',
+            'mere_vit_a'=>'required|max:250',
+            'mere_mild'=>'required|max:250',
+            'mere_arv'=>'required|max:250',
+            'mere_ctx'=>'required|max:250',
+            'problemes_nn_conjonctivite_nn'=>'required|max:250',
+            'problemes_nn_asphyxie_nn'=>'required|max:250',
+            'problemes_nn_infection_majeure'=>'required|max:250',
+            'problemes_nn_malformation_cong_visible'=>'required|max:250',
+            'problemes_nn_autres'=>'required|max:250',
+            'type_accouchement_id'=>'required|max:250',
+            'user_id'=>'required|max:250',
+            'accouchement_date_accouchement'=>['required','max:250',new Dateafter($object_accouchement_bebe->created_at)],
+        ]);
+        if($element->stopOnFirstFailure()->fails()){
+            $erreur=$element->errors()->all();
+            return($erreur[0]);
+        }
+        $success=1;
+        DB::transaction(function() use ($requete_formulaire,$donnee_attestation){
+                        $Accouchement=Accouchement::create([
+                'type_accouchement_id'=>$requete_formulaire->type_accouchement_id,
+                'user_id'=>$requete_formulaire->user_id,
+                'maternite_id'=>$requete_formulaire->maternite_id,
+                'accouchement_date_accouchement'=>$requete_formulaire->accouchement_date_accouchement,
+            ]);
+            $Bebe=Bebe::create([
                 'accouchement_id'=>$Accouchement->id,
-                'dece_designation'=>$requete_formulaire->dece_designation,
-                'dece_age'=>$requete_formulaire->dece_age,
+                'bebe_complicationsAlaNaiss'=>$requete_formulaire->bebe_complicationsAlaNaiss,
+                'bebe_prc'=>$requete_formulaire->bebe_prc,
+                'bebe_arv'=>$requete_formulaire->bebe_arv,
+                'bebe_ctx'=>$requete_formulaire->bebe_ctx,
+                'bebe_statut'=>$requete_formulaire->etat_de_l_enfant,
+                'bebe_probleme_constate'=>$requete_formulaire->bebe_probleme_constate,
+                'bebe_soins_traitement'=>$requete_formulaire->bebe_soins_traitement,
+            ]);
+            $Attestation=Attestation::create([
+                'bebe_id'=>$Bebe->id,
+                'nom_enfant'=>$requete_formulaire->nom_enfant,
+                'postnom_enfant'=>$requete_formulaire->postnom_enfant,
+                'prenom_enfant'=>$requete_formulaire->prenom_enfant,
+                'genre'=>$requete_formulaire->genre,
+                'lieu_de_naissance'=>$requete_formulaire->lieu_de_naissance,
+                'date_de_naissance'=>$requete_formulaire->date_de_naissance,
+                'nompere'=>$donnee_attestation->nompere,
+                'postnom_pere'=>$donnee_attestation->postnom_pere,
+                'prenom_pere'=>$donnee_attestation->prenom_pere,
+                'telephone_pere'=>$donnee_attestation->telephone_pere,
+                'adresse_pere'=>$donnee_attestation->adresse_pere,
+                'nationalite_pere'=>$donnee_attestation->nationalite_pere,
+                'lieudenassance_pere'=>$donnee_attestation->lieudenassance_pere,
+                'datenaissance_pere'=>$donnee_attestation->datenaissance_pere,
+            ]);
+            $Mere_information=Mere_information::create([
+                'accouchement_id'=>$Accouchement->id,
+                'problemesMat'=>$requete_formulaire->mere_problemesMat,
+                'soins_traitement'=>$requete_formulaire->mere_soins_traitement,
+                'fer_folate'=>$requete_formulaire->mere_fer_folate,
+                'vit_a'=>$requete_formulaire->mere_vit_a,
+                'mild'=>$requete_formulaire->mere_mild,
+                'arv'=>$requete_formulaire->mere_arv,
+                'ctx'=>$requete_formulaire->mere_ctx,
+                'conseiller_pf'=>$requete_formulaire->mere_conseiller_pf,
+                'methode_pf'=>$requete_formulaire->mere_methode_pf,
+            ]);
+            
+            $problemenn=Problemes_nn::create([
+                'accouchement_id'=>$Accouchement->id,
+                'problemes_nn_conjonctivite_nn'=>$requete_formulaire->problemes_nn_conjonctivite_nn,
+                'problemes_nn_asphyxie_nn'=>$requete_formulaire->problemes_nn_asphyxie_nn,
+                'problemes_nn_infection_majeure'=>$requete_formulaire->problemes_nn_infection_majeure,
+                'problemes_nn_malformation_cong_visible'=>$requete_formulaire->problemes_nn_malformation_cong_visible,
+                'problemes_nn_autres'=>$requete_formulaire->problemes_nn_autres, 
+            ]);
+            $Naiss_vivante=Statut_enfant::create([
+                'bebe_id'=>$Bebe->id,
+                'designation'=>$requete_formulaire->designation,
+                'statut'=>$requete_formulaire->etat_de_l_enfant,
+            ]);
+            $Soins_interventions_nn=Soins_interventions_nn::create([
+                'accouchement_id'=>$Accouchement->id,
+                'soins_interventions_nn_nn_soins_essentiels'=>$requete_formulaire->soins_interventions_nn_nn_soins_essentiels,
+                'soins_interventions_nn_nn_allaites_dans_heure'=>$requete_formulaire->soins_interventions_nn_nn_allaites_dans_heure,
+                'soins_interventions_nn_ayant_recu_at_ben_iv_im'=>$requete_formulaire->soins_interventions_nn_ayant_recu_at_ben_iv_im,
+                'soins_interventions_nn_nn_methode_Kangourou'=>$requete_formulaire->soins_interventions_nn_nn_methode_Kangourou,
+                'soins_interventions_nn_nn_prematures'=>$requete_formulaire->soins_interventions_nn_nn_prematures,
+                'soins_interventions_nn_nn_beneficiant_reanimation'=>$requete_formulaire->soins_interventions_nn_nn_beneficiant_reanimation,
+                'soins_interventions_nn_nvp_au_nn'=>$requete_formulaire->soins_interventions_nn_nvp_au_nn,
             ]);
             $Complications=Complications::create([
                 'accouchement_id'=>$Accouchement->id,
@@ -106,7 +274,6 @@ class AccouchementController extends Controller
                 
             ]);
         });
-        return redirect()->back()->with("success","Informations ont été bien Ajoutées");
-
+        return($success);  
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Maternite;
 use App\Models\Patient;
+use App\Models\accouchement;
 use App\Models\Mere_information;
 use App\Models\Type_accouchement;
 use App\Models\Methode;
@@ -21,16 +22,17 @@ class MaterniteController extends Controller
     {
         $exploration_maternite=Maternite::findOrFail($identifiant);
         $object_maternite=Maternite::with("getmaternite")->get()->find($exploration_maternite->id);
-        $information_acouchement=Mere_information::where("accouchement_id",2);
+        $information_acouchement=Patient::find($exploration_maternite->patient_id)->get_patent_from_maternite_to_accouchement;
         $information_type_accouchement=Type_accouchement::all();
+        $maternite_accouchement=Maternite::with("get_maternite_from_accouchement")->find($identifiant);
         $methodes=Methode::all();
         return view('Home.view_maternite_self',[
             'objet_maternite'=>$object_maternite,
             'objet_mere'=>$information_acouchement,
             'objet_type_accouchement'=>$information_type_accouchement,
             'methodes'=>$methodes,
+            'maternite_accouchement'=>$maternite_accouchement
         ]);
-
     }
     public function viewmaterinite()
     {
@@ -43,7 +45,7 @@ class MaterniteController extends Controller
             'maternite_statut_serologique_vih'=>$requete->maternite_statut_serologique_vih,
             'maternite_obs'=>$requete->maternite_obs
         ]);
-        return redirect()->back()->with("success","Informations ont été bien Ajoutées");
+        return (1);
     }
 }
 // $information_mere->get_patient_from_mere->id

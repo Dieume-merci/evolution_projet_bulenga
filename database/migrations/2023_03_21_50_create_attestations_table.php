@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('attestations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('bebe_id')->constrained()->onDelete('cascade')->unique();
             $table->string('nompere');
             $table->string('postnom_pere');
             $table->string('prenom_pere');

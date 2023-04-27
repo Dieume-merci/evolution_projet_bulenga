@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class bebe extends Model
 {
     protected $fillable=[
-        'attestation_id','bebe_complicationsAlaNaiss',
+        'bebe_complicationsAlaNaiss',
         'bebe_prc','bebe_arv','bebe_ctx',
         'bebe_probleme_constate','bebe_soins_traitement',
+        'bebe_statut','accouchement_id',
     ];
     use HasFactory;
 }

@@ -1,77 +1,47 @@
 <div class="modal-body text-center">
-    <p id="notification"></p>
-    <form class="form-group" id="formulaire" action="{{ route("inserer_accouchement") }}">
+    <p id="notification_trois"></p>
+    <form class="form-group" id="formulaire_trois"  action="{{ route("inserer_accouchement_jumeau") }}">
         @csrf
-            <div class="row" id="etape_1">
+            <div class="row" id="etapee_1">
                 <legend>
                     <small><i>Identité de l'Enfant</i><hr width="50%" class="logo-title"></small>
                 </legend>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <input type="hidden" name="maternite_id" value="{{$objet_maternite->id}}">
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Nom </span>
+                    <div class="form-floating mt-2">
                         <input type="text" name="nom_enfant" class="form-control" placeholder="Entrer le nom de l'enfant">
+                        <label>Nom De l'Enfant </label>
                     </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">PostNom</span>
+                    <div class="form-floating mt-2">
                         <input type="text" name="postnom_enfant" class="form-control" placeholder="Entrer le postnom de l'enfant">
+                        <label >PostNom</label>
                     </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Prenom</span>
+                    <div class="form-floating mt-2">
                         <input type="text" name="prenom_enfant" class="form-control" placeholder="Entrer un prenom de l'enfant">
+                        <label>Prenom</label>
                     </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Contact</span>
-                        <input type="text" name="telephone_pere" minlength="10" maxlength="13" class="form-control" placeholder="Entrer le numero du telephone du pere">
-                    </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Civilité</span>
+                    <div class="form-floating mt-2">
                         <select name="genre" class="form-control">
                             <option value>Selectionner Une civilité de l'enfant</option>
                             <option value="Feminin">Madame</option>
                             <option value="Masculin">Monsieur</option>
                         </select>
+                        <label>Civilité</label>
                     </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Né(e) à</span>
-                        <input type="text" name="lieu_de_naissance" maxlength="30" class="form-control" placeholder="Lieu de naissance ">
-                        <span class="input-group-text">Le</span>
+                    <div class="form-floating mt-2">
                         <input type="date" name="date_de_naissance" class="form-control">
+                        <label>Né(e) à</label>
                     </div>
-                </div>
-                <div class="col-lg-6 mt-1">
-                    <div class="input-group">
-                        <span class="input-group-text">Nom du Pere </span>
-                        <input type="text" name="nompere" class="form-control" placeholder="Non du pere">
+                    <div class="form-floating mt-2">
+                        <input type="text" name="lieu_de_naissance" maxlength="30" class="form-control" placeholder="Lieu de naissance ">
+                        <label>Lieu de naissance</label>
                     </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">PostNom</span>
-                        <input type="text" name="postnom_pere" class="form-control" placeholder="PostNom pere">
-                    </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Prenom</span>
-                        <input type="text" name="prenom_pere" class="form-control" placeholder="Prenom Pere">
-                    </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Adresse</span>
-                        <input type="text" name="adresse_pere" class="form-control" placeholder="Adresse du pere">
-                    </div>
-                    <div class="input-group mt-2">
-                        <span class="input-group-text">Nationalité</span>
-                        <input type="text" name="nationalite_pere" class="form-control" placeholder="Nationalité du pere">
-                    </div>
-                </div>
-                <div class="input-group mt-2">
-                    <span class="input-group-text">Né(e) à</span>
-                    <input type="text" name="lieudenassance_pere" maxlength="30" class="form-control" placeholder="Lieu de naissance Pere">
-                    <span class="input-group-text">Le</span>
-                    <input type="date" name="datenaissance_pere" class="form-control">
                 </div>
             <div class="btn-group mt-2 dn-left">
-                <p onclick="show_step('etape_2')" class="btn-items" id="bouttonright"></p>
+                <p onclick="show_stepp('etapee_2')" class="btn-items" id="bouttonright"></p>
             </div>
             </div>
-            <div class="row dnh" id="etape_2">
+            <div class="row dnh" id="etapee_2">
                 <div class="col-lg-6">
                     <legend> <small><i>état de l'Enfant</i><hr width="50%" class="logo-title"></small></legend>
                     <div class="input-group mt-2">
@@ -104,13 +74,13 @@
                     </div>
                     <div class="input-group mt-2">
                         <span class="input-group-text">état de l'Enfant</span>
-                        <select id="etat_de_l_enfant" name="etat_de_l_enfant" onchange="change_show_items()" class="form-control">
+                        <select name="etat_de_l_enfant" class="form-control">
                             <option value>Selectionner une Option ici</option>
                             <option value="MORT-NE">Mort Né</option>
                             <option value="NAISSANCE-VIVANTE">Naissance vivante</option>
                         </select>
                     </div>
-                    <div class="input-group mt-2 dnh"  id="description">
+                    <div class="input-group mt-2">
                         <span class="input-group-text">Description</span>
                         <input type="text"  name="designation" placeholder="mettez Une Une Description" class="form-control">
                     </div>
@@ -175,12 +145,12 @@
                     </div>
                 </div>
                 <div class="btn-group mt-2 dn-left">
-                    <p onclick="show_step('etape_1')" class="btn-items" id="bouttonleft"></p>
-                    <p onclick="show_step('etape_3')" class="btn-items" id="bouttonright"></p>
+                    <p onclick="show_stepp('etapee_1')" class="btn-items" id="bouttonleft"></p>
+                    <p onclick="show_stepp('etapee_3')" class="btn-items" id="bouttonright"></p>
                 </div>
             </div>
             
-            <div class="row dnh" id="etape_3">
+            <div class="row dnh" id="etapee_3">
                 <div class="col-lg-6">
                     <legend> <small><i>Probleme lié à La mere</i><hr width="50%" class="logo-title"></small></legend>
                 <div class="form-floating mt-2">
@@ -233,26 +203,13 @@
                         </select>
                         <label>CTX</label>
                     </div>
-                    <div class="form-floating mt-2">
-                        <textarea cols="30" rows="10" name="mere_conseiller_pf" class="form-control"></textarea>
-                        <label>Conseil PF</label>
-                    </div>
-                </div>
-                <div class="form-floating mt-2">
-                    <select name="mere_methode_pf" class="form-control">
-                        <option value>Selectionner Une methode</option>
-                        @foreach ($methodes as $item_methode)
-                            <option value="{{$item_methode->id}}">{{$item_methode->methode_designation}}</option>
-                        @endforeach
-                    </select>
-                    <label for="">Methode de Planification F.</label>
                 </div>
                 <div class="btn-group dn-left mt-3">
-                    <p onclick="show_step('etape_2')" class="btn-items" id="bouttonleft"></p>
-                    <p onclick="show_step('etape_4')" class="btn-items" id="bouttonright"></p>
+                    <p onclick="show_stepp('etapee_2')" class="btn-items" id="bouttonleft"></p>
+                    <p onclick="show_stepp('etapee_4')" class="btn-items" id="bouttonright"></p>
                 </div>
             </div>
-            <div class="row dnh" id="etape_4">
+            <div class="row dnh" id="etapee_4">
                 <div class="col-lg-6">
                     <legend> <small><i>Probleme A la Naissance</i><hr width="50%" class="logo-title"></small></legend>
                 <div class="form-floating mt-2">
@@ -316,10 +273,10 @@
                     <label>Date d'Accouchement </label>
                 </div>
                 <div class="btn-group dn-left mt-3">
-                    <p onclick="show_step('etape_3')" class="btn-items" id="bouttonleft"></p>
+                    <p onclick="show_stepp('etapee_3')" class="btn-items" id="bouttonleft"></p>
                 </div>
                 <i class="mt-3">
-                    <button class="btn btn-success" id="boutton"><span class="bi bi-save2"></span> Enregister</button>
+                    <button class="btn btn-success" id="boutton_trois"><span class="bi bi-save2"></span> Enregister</button>
                 </i>
             </div>
         </form>

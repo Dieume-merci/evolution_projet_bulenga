@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('naiss_vivantes', function (Blueprint $table) {
+        Schema::create('Statut_enfants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('accouchement_id')->constrained()->onDelete('cascade');
-            $table->string('naiss_vivante_designation',45)->nullable();
+            $table->foreignId('bebe_id')->constrained()->onDelete('cascade');
+            $table->string('designation',255)->nullable();
+            $table->string('statut',50);
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('naiss_vivantes');
+        Schema::dropIfExists('Statut_enfants');
     }
 };
